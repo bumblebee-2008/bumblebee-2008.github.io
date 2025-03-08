@@ -28,137 +28,93 @@
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
+    <style>
+      body, html {
+
+          height: 100%;
+
+          margin: 0;
+
+          background-size: cover;
+          background-attachment:fixed;
+
+          background-repeat: no-repeat;
+
+      }
+    </style>
   </head>
 
   <body
-    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat h-screen p-6"
-    style="background-image:url(`bg${ Math.random()}.jpg`); "
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat p-6"
+    style="background-size: cover;height:100%;background-image:url(`bg${ Math.random()}.jpg`);"
     id="bd"
   >
     <div
-      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0"
+      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0 my-16 mx-8"
     >
       <!--Main Col-->
       <div
         id="profile"
-        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-6 lg:mx-0 my-6"
-      >                                                 <!-- Custom Style -->
-              <style>
-                .nav-for-slider .swiper-slide {
-                  cursor: pointer;
-                  margin-right: 0 !important;
-                }
-                .swiper-wrapper {
-                  height: auto;
-                }
-                .nav-for-slider .swiper-slide img {
-                  border: 2px solid transparent;
-                  border-radius: 28px;
-                }
-                .nav-for-slider .swiper-slide-thumb-active img {
-                  border-color: rgb(79 70 229);
-                }
+        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-6 lg:mx-0 my-6 mx-8"
+      >
 
-          .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow:hidden;
-            background-color: rgba(0, 0, 0, 0.8);
-            max-width: 100%;
-            max-height: 100%;
-            
-          }
-          .lightbox-image {
-            display: block;
-            margin: auto;
-            max-width: 100%;
-           max-height: 100%;
-          }
-          .close {
-            color: #fff;
-            font-size: 3em;
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            cursor: pointer;
-          }
-          .gallery {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            grid-template-rows: 1fr;
-            grid-column-gap: 30px;
-            grid-row-gap: 30px;
-          }
-          .gallery img {
-            max-width: 80%;
-            cursor: pointer;
-          }
-          .gallery img:hover {
-            max-width: 100%;
-            cursor: pointer;
-          }
-              </style>
-               <section class="py-24 relative">
-                <div class="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
-                  <div class="mb-16">
-                      <h2 class="w-full text-center text-gray-900 text-4xl font-bold font-manrope leading-normal pb-2.5">Our Gallery</h2>
-                      <p class="w-full text-center text-gray-600 text-lg font-normal leading-8">Explore the essence of beauty in our gallery's intimate space.</p>
-                  </div>
-                  <div class="flex flex-col-reverse  gap-8 mx-auto">
 
-                      <div class="slider-box flex flex-col xl:flex-row gap-8">
 
-                        <div class="box xl:w-[1062px] w-full gallery">
-                          <div class="swiper main-slide-carousel swiper-container relative">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="block xl:w-[1062px] w-full mx-auto h-[627px] rounded-3xl">
-                                  <img src="/rs4.jpeg" alt="Gallery image" class="gallery-image w-full h-full mx-auto rounded-3xl object-cover"/>
-                                </div>
-                              </div>
+                                                        <!-- Custom Style -->
+        <style>
+        .lightbox {
+          display: none;
+          position: fixed;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          overflow:hidden;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+        .lightbox-image {
+          display: block;
+          margin: auto;
+          max-width: 100%;
+         max-height: 100%;
+        }
+        .close {
+          color: #fff;
+          font-size: 3em;
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          cursor: pointer;
+        }
+        .gallery {
+          width: 90vw;
+          max-width: 1200px;
+          margin: 0 auto;
+          grid-template-rows: 1fr;
+          grid-column-gap: 30px;
+          grid-row-gap: 30px;
 
-                              <div class="swiper-slide">
-                                <div class="block xl:w-[1062px] w-full mx-auto h-[627px] rounded-3xl">
-                                  <img src="bg3.jpg" alt="Gallery image" class="gallery-image w-full h-full mx-auto rounded-3xl object-cover"/>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="block xl:w-[1062px] w-full mx-auto h-[627px] rounded-3xl">
-                                  <img src="bg2.jpg" alt="Gallery image" class="gallery-image w-full h-full mx-auto rounded-3xl object-cover"/>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="block xl:w-[1062px] w-full mx-auto h-[627px] rounded-3xl">
-                                  <img src="bg1.jpg" alt="Gallery image" class="gallery-image w-full h-full mx-auto rounded-3xl object-cover"/>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="xl:w-[126px] w-full">
-                          <div class="nav-for-slider">
-                            <div class="swiper-wrapper justify-center md:gap-7 gap-4 xl:flex-col">
-                              <div class="swiper-slide thumbs-slide lg:!w-[126px] md:!h-[135px] w-full h-[110px]">
-                                <img src="https://pagedone.io/asset/uploads/1713943683.png" alt="Gallery image" class="gallery-image w-full cursor-pointer h-full rounded-2xl border-2 border-gray-200 transition-all duration-500 hover:border-indigo-600 object-cover"/>
-                              </div>
-                              <div class="swiper-slide thumbs-slide lg:!w-[126px] md:!h-[135px] w-full h-[110px]">
-                                <img src="https://pagedone.io/asset/uploads/1713943709.png" alt="Gallery image" class="gallery-image w-full cursor-pointer h-full rounded-2xl border-2 border-gray-200 transition-all duration-500 hover:border-indigo-600 object-cover"/>
-                              </div>
-                              <div class="swiper-slide thumbs-slide lg:!w-[126px] md:!h-[135px] w-full h-[110px]" >
-                                <img src="https://pagedone.io/asset/uploads/1713943720.png" alt="Gallery image" class="gallery-image w-full cursor-pointer h-full rounded-2xl border-2 border-gray-200 transition-all duration-500 hover:border-indigo-600 object-cover"/>
-                              </div>
-                              <div class="swiper-slide thumbs-slide lg:!w-[126px] md:!h-[135px] w-full h-[110px]">
-                                <img src="https://pagedone.io/asset/uploads/1713943731.png" alt="Gallery image" class="gallery-image w-full cursor-pointer h-full rounded-2xl border-2 border-gray-200 transition-all duration-500 hover:border-indigo-600 object-cover"/>
-                              </div>                   
-                            </div>
-                          </div>
-                        </div>
+        }
+        .gallery img {
+          max-width: 100%;
+          cursor: pointer;
+        }
+        .gallery img:hover {
+          max-width: 100%;
+          cursor: pointer;
+        }
+        </style>
+         <section class="py-24 ">
+              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+                <div class="grid gap-2.5 lg:pb-16 pb-10">
+                  <h2 class="w-full text-center text-4xl font-bold font-manrope leading-normal">Photo Gallery</h2>
+                  <div class="w-full text-center text-lg font-normal leading-8">All these photos were shot on Nothing Phone 2(a)</div>
+                </div>
+                    <div class="gallery">
+                      <div class="flex flex-col mb-10 w-4/6" id="gallimgs">
+                        
+                        
                       </div>
                     </div>
                   </div>
@@ -167,22 +123,9 @@
                     <img src="" alt="" class="lightbox-image" id="lightbox-image">
                   </div>
                 </div>
-              </section>  
-            <!-- Custom Slider -->
-              <script>
-                var swiper_thumbs = new Swiper(".nav-for-slider", {
-                  loop: true,
-                  spaceBetween: 30,
-                  slidesPerView: 4,
-                });
-                var swiper = new Swiper(".main-slide-carousel", {
-                  slidesPerView: 1,
-                  effect: "fade",
-                  thumbs: {
-                    swiper: swiper_thumbs,
-                  },
-                });
-
+            </section>
+        <!-- Initialize Swiper -->
+        <script>
           // Get references to elements
           const gallery = document.querySelector('.gallery');
           const lightbox = document.getElementById('lightbox');
@@ -197,7 +140,43 @@
               lightbox.style.display = 'flex';
             }
           });
-
+          
+          const wimgarr=[25,16,29,30,33,34,36,37,40];
+          //const arr = [(1,2,3),(4,5,6),(7,8,9),(10,11,12),(13,14,15),(17,16),{18,19,20},{21,22,23},{24,25,26},{27,28,31},{32,29},{35,33},{38,34},{39,37}]
+          const arr = [[1,2,3],[39,37],[4,5,6],[7,8,9],[17,16],[10,11,12],[13,14,15],[18,19,20],[21,22,23],[32,29],[24,25,26],[27,28,31],[35,33],[38,34]] 
+          let count =1;
+          
+          let d = ``;
+          for(let i=0;i<arr.length;i++){
+            console.log(arr[i])
+            if(arr[i].length==2){
+              d+=`<div class="grid md:grid-cols-12 gap-8 lg:mb-11 mb-7">
+                          <div class="md:col-span-4 md:h-[404px] h-[277px] w-full rounded-3xl">
+                              <img src="/gallery/${arr[i][0]}.jpg" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto lg:col-span-4 md:col-span-6 w-full h-full">
+                            </div>
+                            <div class="md:col-span-8 md:h-[404px] h-[277px] w-full rounded-3xl">
+                              <img src="/gallery/${arr[i][1]}.jpg" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto lg:col-span-8 md:col-span-6 w-full h-full">
+                            </div>
+                        </div>`
+            }
+            else{
+              d+=`<div class="grid md:grid-cols-3 grid-cols-1 gap-8 mb-8">
+                          <div class="h-[277px] w-full rounded-3xl">
+                            <img src="/gallery/${arr[i][0]}.jpg" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                          </div>
+                          <div class="h-[277px] w-full rounded-3xl">
+                            <img src="/gallery/${arr[i][1]}.jpg" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                          </div>
+                          <div class="h-[277px] w-full rounded-3xl">
+                            <img src="/gallery/${arr[i][2]}.jpg" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                          </div>
+                        </div>`
+            }
+          }
+          console.log((d))
+          document.getElementById("gallimgs").innerHTML=d;
+          
+          
           // Close lightbox when close button is clicked
           closeButton.addEventListener('click', () => {
             lightbox.style.display = 'none';
@@ -209,12 +188,10 @@
               lightbox.style.display = 'none';
             }
           });
-              </script>
+        </script>
 
-          
-        </div>
+        
       </div>
-
       <!-- Pin to top right corner -->
       <div class="absolute top-0 right-0 h-12 w-18 p-4">
         <button class="js-change-theme focus:outline-none">🌙</button>
