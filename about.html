@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hridhuun's Personal Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <script
+      src="https://kit.fontawesome.com/dc1278f4ea.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+
+  <body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat h-screen p-6"
+    style="background-attachment:fixed;background-image:url(`bg${ Math.random()}.jpg`); "
+    id="bd"
+  >
+    <div
+      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0 opacity-80"
+    >
+      <!--Main Col-->
+      <div
+        id="profile"
+        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-6 lg:mx-0 my-6 "
+      >
+        <div class="p-4 md:p-12 text-center lg:text-left">
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0 ml-12">About Me</h1>
+          <div
+            class="mx-auto lg:mx-0 w-full pt-2 border-b-2 border-green-500 opacity-25"
+          ></div>
+          <div class="lg:m-12">
+
+            My journey into programming and shooting began in grade 6, but not in the way you might expect. Ironically, I hated attending computer lectures during this time. I was afraid of computers, and when we learned HTML, I didn’t understand it at all. All of my classmates were much faster than me when it came to typing.At the time, I was more of a car guy. I would draw cars, play racing games, and focus on anything related to automobiles.<br><br>
+
+            <span class="text-xl font-bold my-16">Discovering Shooting:</span>
+            <br><br>
+            Around this time,my mother sent me to an army camp, where they taught me archery and target shooting, among other things. I quickly developed an interest in shooting and expressed my desire to do it regularly. When I learned that rifle shooting was an actual sport, I became even more excited. I began practicing at Mulund Gymkhana.  Within 2–3 months, a DSO shooting competition came up, for which my coach encouraged me to go. Not from a winning perspective, but more from a learning perspective. It was my first shooting competition, and of course, I performed poorly. My score was around 32 out of 400. While disappointed, I continued practicing.<br><br>
+
+            <span class="text-xl font-bold">Impact of COVID-19:</span><br><br>
+
+            When COVID-19 struck in February 2020, everyone was trapped at home for two years. Due to the lockdown, I was unable to continue training. At the same time, my 7th grade school year was entirely online. This became a turning point for me, as I started to explore programming.<br><br>
+
+            <span class="text-xl font-bold"> Introduction to Programming:</span><br><br>
+
+            During the second half of grade 7, my schoolmates introduced me to a popular social media platform called Discord. Initially, I was confused by the interface and had no idea how the bots worked. However, my curiosity pushed me to understand how they operated. I searched online and found various codes to create Discord bots. After a few months of copying and modifying other people's codes, I tried writing my own code.<br>
+
+            That's when I discovered aoi.js (formerly dbd.js). I got good at it pretty quickly and soon started taking active part in their discord server. I would help other beginners with their aoi.js-related doubts. However,  I wanted to contribute something more significant, I wanted to give back to the amazing open-source community that taught me programming.<br><br>
+            I began coding dashboards for Discord bots, and my work was noticed by the aoi.js team. They offered me to contribute to their project, I became the lead developer of @aoijs/aoi.panel, an easy-to-use UI for aoi.js. This was a huge milestone in my programming journey.<br><br>
+
+            When my parents heard that I was doing programming, they were upset at first. But I was able to convince them that I was doing it for a positive and meaningful cause.<br><br>
+
+            <span class="text-xl font-bold">Returning to Shooting:</span><br><br>
+            The lockdown was eventually called off, and life returned to normal. Unfortunately, I was not permitted to keep filming in 9th and 10th grade, as these grades were precious years in academics.<br>
+            I continued shooting in 11th grade, and after only four months, I was playing my first nationals. I trained daily for four hours, and the hard work paid off. I won my first national medal in shooting.
+            <br><br>
+            <span class="text-xl font-bold">The Future:</span><br><br>
+
+            Currently, I’ve shifted categories in rifle shooting, meaning I’m almost starting over, but the grind continues. Both programming and shooting have shaped who I am today, and I remain determined to keep pushing forward in both fields.
+
+
+
+
+
+
+
+            <br><br>
+            
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pin to top right corner -->
+      <div class="absolute top-0 right-0 h-12 w-18 p-4">
+        <button class="js-change-theme focus:outline-none">🌙</button>
+        <a href="/"
+          ><button class="focus:outline-none"><i class="fa fa-home"></i></button
+        ></a>
+      </div>
+    </div>
+
+    <script>
+      document.body.style.backgroundImage =
+        "url('/images/bg" + (Math.floor(Math.random() * 3) + 1) + ".jpg')";
+
+      //Toggle mode
+      const toggle = document.querySelector(".js-change-theme");
+      const body = document.querySelector("body");
+      const profile = document.getElementById("profile");
+
+      toggle.addEventListener("click", () => {
+        if (body.classList.contains("text-gray-900")) {
+          toggle.innerHTML = "☀️";
+          body.classList.remove("text-gray-900");
+          body.classList.add("text-gray-100");
+          profile.classList.remove("bg-white");
+          profile.classList.add("bg-gray-900");
+        } else {
+          toggle.innerHTML = "🌙";
+          body.classList.remove("text-gray-100");
+          body.classList.add("text-gray-900");
+          profile.classList.remove("bg-gray-900");
+          profile.classList.add("bg-white");
+        }
+      });
+    </script>
+  </body>
+</html>
