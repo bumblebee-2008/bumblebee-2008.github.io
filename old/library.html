@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hridhuun's Personal Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/js/pagedone.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script
+      src="https://kit.fontawesome.com/dc1278f4ea.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      body, html {
+        overflow-x: hidden;
+          height: 100%;
+
+          margin: 0;
+
+          background-size: cover;
+          background-attachment:fixed;
+
+          background-repeat: no-repeat;
+
+      }
+      
+      .nerdy-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #16a085;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .nerdy-button:hover {
+        background: #138d75;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat "
+    style="background-size: cover;height:100%;"
+    id="bd"
+  >
+    <div
+      class="max-w-4xl w-3/4 flex items-center h-auto lg:h-screen flex-wrap mx-8 md:mx-auto lg:mx-auto my-32 lg:my-0 my-16 mx-4"
+    >
+      <!--Main Col-->
+      <div
+        id="profile"
+        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-4 lg:mx-0 my-6"
+      >
+
+
+
+                                                        <!-- Custom Style -->
+        <style>
+        .lightbox {
+          display: none;
+          position: fixed;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          overflow:hidden;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+        .lightbox-image {
+          display: block;
+          margin: auto;
+          max-width: 100%;
+         max-height: 100%;
+        }
+        .close {
+          color: #fff;
+          font-size: 3em;
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          cursor: pointer;
+        }
+        .gallery {
+          width: 90vw;
+          max-width: 1200px;
+          margin: 0 auto;
+          grid-template-rows: 1fr;
+          grid-column-gap: 30px;
+          grid-row-gap: 30px;
+
+        }
+        .gallery img {
+          max-width: 100%;
+          cursor: pointer;
+        }
+        .gallery img:hover {
+          max-width: 100%;
+          cursor: pointer;
+        }
+        </style>
+         <section class="py-24 ">
+              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+                <div class="grid gap-2.5 lg:pb-16 pb-10">
+                  <h2 class="w-full text-center text-4xl font-bold font-manrope leading-normal">Photo Gallery</h2>
+                  <div class="w-full text-center text-lg font-normal leading-8">All these photos were shot on Nothing Phone 2(a)</div>
+                </div>
+                    <div class="gallery">
+                      <div class="flex flex-col mb-10 content-center mx-3  w-4/6" id="gallimgs">
+
+
+                      </div>
+                      <div class="flex flex-col mb-10 content-center mx-3  w-4/6">
+                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onclick="javascript:updateNew()" id="btt">
+                          Load More
+                        </button>
+
+
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="lightbox" id="lightbox">
+                    <span class="close" id="close">&times;</span>
+                    <img src="" alt="" class="lightbox-image" id="lightbox-image">
+                  </div>
+                </div>
+            </section>
+        <!-- Initialize Swiper -->
+        <script>
+          // Get references to elements
+          const gallery = document.querySelector('.gallery');
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImage = document.getElementById('lightbox-image');
+          const closeButton = document.getElementById('close');
+
+          // Add event listener to each image
+          gallery.addEventListener('click', e => {
+            if (e.target.classList.contains('gallery-image')) {
+              const imageSrc = e.target.src;
+              lightboxImage.src = imageSrc;
+              lightbox.style.display = 'flex';
+            }
+          });
+
+          const wimgarr=[25,16,29,30,33,34,36,37,40];
+          //const arr = [(1,2,3),(4,5,6),(7,8,9),(10,11,12),(13,14,15),(17,16),{18,19,20},{21,22,23},{24,25,26},{27,28,31},{32,29},{35,33},{38,34},{39,37}]
+          const arr = [[41,45],[7,8,9],[17,16],[10,11,12],[42,46],[13,14,15],[43,47],[18,19,20],[44,49],[21,22,23],[32,29],[24,25,26],[48,50],[27,28,31],[35,33],[38,34],[1,2,3],[54,51],[39,37],[4,5,6],[55,52],[56,53]] 
+          let count =0;
+          let checkpoints=[6,6,5,5];
+          let checkpoint = 6;
+          let cp=0;
+
+          let d = document.getElementById("gallimgs").innerHTML;
+          for(;count<checkpoint;count++){
+            
+            if(arr[count].length==2){
+              d+=`<div class="grid md:grid-cols-12 gap-8 lg:mb-11 mb-7 ">
+                          <div class="md:col-span-4 md:h-[404px] h-[277px] w-full rounded-3xl ">
+                              <img src="/gallery/${arr[count][0]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto lg:col-span-4 md:col-span-6 w-full h-full">
+                            </div>
+                            <div class="md:col-span-8 md:h-[404px] h-[277px] w-full rounded-3xl">
+                              <img src="/gallery/${arr[count][1]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto lg:col-span-8 md:col-span-6 w-full h-full">
+                            </div>
+                        </div>`
+            }
+            else{
+              d+=`<div class="grid md:grid-cols-3 grid-cols-1 gap-8 mb-7">
+                          <div class="h-[277px] w-full rounded-3xl">
+                            <img src="/gallery/${arr[count][0]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                          </div>
+                          <div class="h-[277px] w-full rounded-3xl">
+                            <img src="/gallery/${arr[count][1]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                          </div>
+                          <div class="h-[277px] w-full rounded-3xl">
+                            <img src="/gallery/${arr[count][2]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                          </div>
+                        </div>`
+            }
+          }
+          document.getElementById("gallimgs").innerHTML=d;
+          function updateNew(){
+            cp+=1;
+            checkpoint+=checkpoints[cp];
+            for(;count<checkpoint+checkpoints[cp];count++){
+              //count+=1;
+              if(arr[count].length==2){
+                d+=`<div class="grid md:grid-cols-12 gap-8 lg:mb-11 mb-7 ">
+                            <div class="md:col-span-4 md:h-[404px] h-[277px] w-full rounded-3xl ">
+                                <img src="/gallery/${arr[count][0]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto lg:col-span-4 md:col-span-6 w-full h-full">
+                              </div>
+                              <div class="md:col-span-8 md:h-[404px] h-[277px] w-full rounded-3xl">
+                                <img src="/gallery/${arr[count][1]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto lg:col-span-8 md:col-span-6 w-full h-full">
+                              </div>
+                          </div>`
+              }
+              else{
+                d+=`<div class="grid md:grid-cols-3 grid-cols-1 gap-8 mb-7">
+                            <div class="h-[277px] w-full rounded-3xl">
+                              <img src="/gallery/${arr[count][0]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                            </div>
+                            <div class="h-[277px] w-full rounded-3xl">
+                              <img src="/gallery/${arr[count][1]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                            </div>
+                            <div class="h-[277px] w-full rounded-3xl">
+                              <img src="/gallery/${arr[count][2]}.avif" alt="Gallery image" class="gallery-image object-cover rounded-3xl hover:grayscale transition-all duration-700 ease-in-out mx-auto w-full h-full">
+                            </div>
+                          </div>`
+              }
+            }
+            document.getElementById("gallimgs").innerHTML=d;
+            if(count==22){document.getElementById("btt").style.display="none";}
+
+          }
+
+
+          // Close lightbox when close button is clicked
+          closeButton.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+          });
+
+          // Close lightbox when clicking outside the image
+          lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) {
+              lightbox.style.display = 'none';
+            }
+          });
+        </script>
+
+
+      </div>
+      <!-- Pin to top right corner -->
+      <div class="absolute top-0 right-0 h-12 w-18 p-4">
+        <a href="/library" class="nerdy-button">Nerdy Mode</a>
+        <a href="/old"
+          ><button class="focus:outline-none"><i class="fa fa-home"></i></button
+        ></a>
+      </div>
+    </div>
+
+    <script>
+      document.body.style.backgroundImage =
+        "url('/images/bg" + (Math.floor(Math.random() * 3) + 1) + ".jpg')";
+
+    </script>
+  </body>
+</html>

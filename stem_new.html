@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>STEM Achievements - Hridhuun's Terminal Portfolio</title>
+    <meta name="description" content="Hridhuun Savant's academic and STEM achievements" />
+    <meta name="keywords" content="Hridhuun Savant, STEM, Academic, Science, Technology" />
+    <meta name="author" content="Hridhuun Savant" />
+
+    <script
+      src="https://kit.fontawesome.com/dc1278f4ea.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      :root {
+        --terminal-bg: #0a0a0a;
+        --terminal-secondary: #111111;
+        --terminal-border: #333333;
+        --terminal-green: #00ff41;
+        --terminal-amber: #ffb000;
+        --terminal-blue: #00aaff;
+        --terminal-red: #ff5555;
+        --terminal-text: #c0c0c0;
+        --terminal-text-dim: #808080;
+        --terminal-text-bright: #ffffff;
+      }
+      
+      body {
+        font-family: 'JetBrains Mono', monospace;
+        background: var(--terminal-bg);
+        color: var(--terminal-text);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      
+      .terminal-container {
+        min-height: 100vh;
+        padding: 20px;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 176, 0, 0.03) 0%, transparent 50%),
+          var(--terminal-bg);
+      }
+      
+      .terminal-window {
+        background: var(--terminal-secondary);
+        border: 1px solid var(--terminal-border);
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .terminal-header {
+        background: linear-gradient(90deg, #333333 0%, #2a2a2a 100%);
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--terminal-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .terminal-buttons {
+        display: flex;
+        gap: 8px;
+      }
+      
+      .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      
+      .btn-close { background: #ff5f57; }
+      .btn-minimize { background: #ffbd2e; }
+      .btn-maximize { background: #28ca42; }
+      
+      .terminal-title {
+        color: var(--terminal-text);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      
+      .nav-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      
+      .nav-btn {
+        background: var(--terminal-bg);
+        border: 1px solid var(--terminal-border);
+        color: var(--terminal-text);
+        padding: 5px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 12px;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-btn:hover {
+        border-color: var(--terminal-green);
+        color: var(--terminal-green);
+      }
+      
+      .terminal-content {
+        padding: 30px;
+      }
+      
+      .prompt {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      .prompt-user {
+        color: var(--terminal-amber);
+      }
+      
+      .prompt-symbol {
+        color: var(--terminal-green);
+        margin: 0 8px;
+        font-weight: 600;
+      }
+      
+      .command {
+        color: var(--terminal-blue);
+      }
+      
+      .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      .achievement-card {
+        background: rgba(17, 17, 17, 0.8);
+        border: 1px solid var(--terminal-border);
+        border-radius: 8px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .achievement-card:hover {
+        border-color: var(--terminal-green);
+        box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      .achievement-title {
+        color: var(--terminal-green);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .achievement-title::before {
+        content: '🏆 ';
+        margin-right: 8px;
+      }
+      
+      .achievement-list {
+        margin-top: 20px;
+      }
+      
+      .achievement-item {
+        display: flex;
+        align-items: center;
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid var(--terminal-border);
+        border-left: 4px solid var(--terminal-green);
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 0 8px 8px 0;
+        transition: all 0.3s ease;
+      }
+      
+      .achievement-item:hover {
+        border-left-color: var(--terminal-amber);
+        background: rgba(30, 30, 30, 0.9);
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 255, 65, 0.1);
+      }
+      
+      .achievement-badge {
+        background: var(--terminal-green);
+        color: var(--terminal-bg);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 15px;
+        min-width: 80px;
+        text-align: center;
+      }
+      
+      .achievement-content {
+        flex: 1;
+      }
+      
+      .achievement-name {
+        color: var(--terminal-amber);
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      
+      .achievement-year {
+        color: var(--terminal-blue);
+        font-size: 14px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--terminal-amber);
+        display: block;
+      }
+      
+      .stat-label {
+        color: var(--terminal-text);
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+      
+      .achievement-description {
+        color: var(--terminal-text);
+        margin-bottom: 15px;
+      }
+      
+      .achievement-link {
+        color: var(--terminal-blue);
+        text-decoration: none;
+        font-size: 14px;
+        border: 1px solid var(--terminal-blue);
+        padding: 5px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+      
+      .achievement-link:hover {
+        background: var(--terminal-blue);
+        color: var(--terminal-bg);
+      }
+      
+      .stats-section {
+        background: rgba(17, 17, 17, 0.5);
+        border: 1px solid var(--terminal-border);
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid var(--terminal-amber);
+      }
+      
+      .stats-title {
+        color: var(--terminal-amber);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .stats-title::before {
+        content: '📊 ';
+        margin-right: 8px;
+      }
+      
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+      }
+      
+      .stat-card {
+        background: var(--terminal-bg);
+        border: 1px solid var(--terminal-border);
+        border-radius: 6px;
+        padding: 15px;
+        text-align: center;
+      }
+      
+      .stat-image {
+        width: 100%;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 4px;
+      }
+      
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--terminal-secondary);
+        border: 1px solid var(--terminal-border);
+        color: var(--terminal-text);
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        z-index: 1000;
+      }
+      
+      @media (max-width: 768px) {
+        .terminal-container {
+          padding: 10px;
+        }
+        
+        .terminal-content {
+          padding: 20px;
+        }
+        
+        .nav-buttons {
+          flex-direction: column;
+          gap: 5px;
+        }
+        
+        .achievement-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="bd">
+    <button class="theme-toggle" id="themeToggle">🔆</button>
+
+    <div class="terminal-container">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <div class="terminal-button btn-close"></div>
+            <div class="terminal-button btn-minimize"></div>
+            <div class="terminal-button btn-maximize"></div>
+          </div>
+          <div class="terminal-title">hridhuun@portfolio:~/stem</div>
+          <div class="nav-buttons">
+            <a href="/" class="nav-btn"><i class="fa fa-home"></i> home</a>
+            <a href="/about" class="nav-btn">about</a>
+            <a href="/library" class="nav-btn">gallery</a>
+          </div>
+        </div>
+        
+        <div class="terminal-content">
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">ls -la ~/stem/</span>
+          </div>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <div class="achievement-title">Academic Excellence</div>
+              <div class="achievement-description">
+                95.6% in ICSE Board Exams and multiple academic achievements
+              </div>
+              <div class="achievement-link">./view_academic_records.sh</div>
+            </div>
+            
+            <div class="achievement-card">
+              <div class="achievement-title">Innovation & Research</div>
+              <div class="achievement-description">
+                Multiple wins in science fairs and innovation competitions
+              </div>
+              <div class="achievement-link">./view_research_projects.sh</div>
+            </div>
+          </div>
+          
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">cat ~/stem/achievement_stats.json</span>
+          </div>
+          
+          <div class="stats-section">
+            <div class="stats-title">STEM Achievement Statistics</div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Major Awards</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">₹70k+</div>
+                <div class="stat-label">Prize Money</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">95.6%</div>
+                <div class="stat-label">ICSE Score</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Years Consecutive</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">cat ~/stem/achievements.txt</span>
+          </div>
+          
+          <div class="achievement-list">
+            <div class="achievement-item">
+              <div class="achievement-badge">🥈 2nd</div>
+              <div class="achievement-content">
+                <div class="achievement-name">STEM Quiz - Jasudben ML</div>
+                <div class="achievement-year">2024</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">📊 95.6%</div>
+              <div class="achievement-content">
+                <div class="achievement-name">10th Board Exams (ICSE)</div>
+                <div class="achievement-year">2024</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">🏆 Top 200</div>
+              <div class="achievement-content">
+                <div class="achievement-name">Vivo Ignite Changemaker</div>
+                <div class="achievement-year">2024</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">🥇 1st</div>
+              <div class="achievement-content">
+                <div class="achievement-name">CIIA Season 2 - PureAer Project</div>
+                <div class="achievement-year">2023</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">🏆 1st</div>
+              <div class="achievement-content">
+                <div class="achievement-name">Junior Make-a-thon - Shaastra (IIT Madras)</div>
+                <div class="achievement-year">2023</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">💰 ₹10k</div>
+              <div class="achievement-content">
+                <div class="achievement-name">Inspire Awards</div>
+                <div class="achievement-year">2023</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">🥇 1st</div>
+              <div class="achievement-content">
+                <div class="achievement-name">INQUEST - Sea Level Changes Model</div>
+                <div class="achievement-year">2022</div>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-badge">🥈 Runner-up</div>
+              <div class="achievement-content">
+                <div class="achievement-name">CIIA-1 - Artificial Eyes Prototype</div>
+                <div class="achievement-year">2022</div>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">exit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      let isDark = true;
+
+      themeToggle.addEventListener('click', () => {
+        if (isDark) {
+          // Light theme
+          root.style.setProperty('--terminal-bg', '#f8f8f2');
+          root.style.setProperty('--terminal-secondary', '#ffffff');
+          root.style.setProperty('--terminal-border', '#e0e0e0');
+          root.style.setProperty('--terminal-text', '#44475a');
+          root.style.setProperty('--terminal-text-bright', '#282a36');
+          themeToggle.textContent = '🌙';
+        } else {
+          // Dark theme (default)
+          root.style.setProperty('--terminal-bg', '#0a0a0a');
+          root.style.setProperty('--terminal-secondary', '#111111');
+          root.style.setProperty('--terminal-border', '#333333');
+          root.style.setProperty('--terminal-text', '#c0c0c0');
+          root.style.setProperty('--terminal-text-bright', '#ffffff');
+          themeToggle.textContent = '🔆';
+        }
+        isDark = !isDark;
+      });
+    </script>
+  </body>
+</html>
