@@ -1,119 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Hridhuun's Personal Portfolio</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+    <title>About - Hridhuun's Terminal Portfolio</title>
+    <meta name="description" content="Learn more about Hridhuun Savant's journey" />
+    <meta name="keywords" content="Hridhuun Savant, About, Developer, Shooter" />
+    <meta name="author" content="Hridhuun Savant" />
 
     <script
       src="https://kit.fontawesome.com/dc1278f4ea.js"
       crossorigin="anonymous"
     ></script>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      :root {
+        --terminal-bg: #0a0a0a;
+        --terminal-secondary: #111111;
+        --terminal-border: #333333;
+        --terminal-green: #00ff41;
+        --terminal-amber: #ffb000;
+        --terminal-blue: #00aaff;
+        --terminal-red: #ff5555;
+        --terminal-text: #c0c0c0;
+        --terminal-text-dim: #808080;
+        --terminal-text-bright: #ffffff;
+      }
+      
+      body {
+        font-family: 'JetBrains Mono', monospace;
+        background: var(--terminal-bg);
+        color: var(--terminal-text);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      
+      .terminal-container {
+        min-height: 100vh;
+        padding: 20px;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 176, 0, 0.03) 0%, transparent 50%),
+          var(--terminal-bg);
+      }
+      
+      .terminal-window {
+        background: var(--terminal-secondary);
+        border: 1px solid var(--terminal-border);
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .terminal-header {
+        background: linear-gradient(90deg, #333333 0%, #2a2a2a 100%);
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--terminal-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .terminal-buttons {
+        display: flex;
+        gap: 8px;
+      }
+      
+      .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      
+      .btn-close { background: #ff5f57; }
+      .btn-minimize { background: #ffbd2e; }
+      .btn-maximize { background: #28ca42; }
+      
+      .terminal-title {
+        color: var(--terminal-text);
+        font-size: 13px;
+        font-weight: 500;
+      }
+      
+      .nav-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      
+      .nav-btn {
+        background: var(--terminal-bg);
+        border: 1px solid var(--terminal-border);
+        color: var(--terminal-text);
+        padding: 5px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 12px;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-btn:hover {
+        border-color: var(--terminal-green);
+        color: var(--terminal-green);
+      }
+      
+      .terminal-content {
+        padding: 30px;
+      }
+      
+      .prompt {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      .prompt-user {
+        color: var(--terminal-amber);
+      }
+      
+      .prompt-symbol {
+        color: var(--terminal-green);
+        margin: 0 8px;
+        font-weight: 600;
+      }
+      
+      .command {
+        color: var(--terminal-blue);
+      }
+      
+      .content-section {
+        background: rgba(17, 17, 17, 0.5);
+        border: 1px solid var(--terminal-border);
+        border-radius: 6px;
+        padding: 25px;
+        margin: 20px 0;
+        border-left: 4px solid var(--terminal-green);
+      }
+      
+      .section-title {
+        color: var(--terminal-green);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .section-title::before {
+        content: '> ';
+        color: var(--terminal-amber);
+        margin-right: 5px;
+      }
+      
+      .highlight {
+        color: var(--terminal-amber);
+        font-weight: 600;
+      }
+      
+      @media (max-width: 768px) {
+        .terminal-container {
+          padding: 10px;
+        }
+        
+        .terminal-content {
+          padding: 20px;
+        }
+        
+        .nav-buttons {
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    </style>
   </head>
 
-  <body
-    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat h-screen p-6"
-    style="background-attachment:fixed;background-image:url(`bg${ Math.random()}.jpg`); "
-    id="bd"
-  >
-    <div
-      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0 opacity-80"
-    >
-      <!--Main Col-->
-      <div
-        id="profile"
-        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-6 lg:mx-0 my-6 "
-      >
-        <div class="p-4 md:p-12 text-center lg:text-left">
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0 ml-12">About Me</h1>
-          <div
-            class="mx-auto lg:mx-0 w-full pt-2 border-b-2 border-green-500 opacity-25"
-          ></div>
-          <div class="lg:m-12">
+  <body id="bd">
 
-            My journey into programming and shooting began in grade 6, but not in the way you might expect. Ironically, I hated attending computer lectures during this time. I was afraid of computers, and when we learned HTML, I didn’t understand it at all. All of my classmates were much faster than me when it came to typing.At the time, I was more of a car guy. I would draw cars, play racing games, and focus on anything related to automobiles.<br><br>
-
-            <span class="text-xl font-bold my-16">Discovering Shooting:</span>
-            <br><br>
-            Around this time,my mother sent me to an army camp, where they taught me archery and target shooting, among other things. I quickly developed an interest in shooting and expressed my desire to do it regularly. When I learned that rifle shooting was an actual sport, I became even more excited. I began practicing at Mulund Gymkhana.  Within 2–3 months, a DSO shooting competition came up, for which my coach encouraged me to go. Not from a winning perspective, but more from a learning perspective. It was my first shooting competition, and of course, I performed poorly. My score was around 32 out of 400. While disappointed, I continued practicing.<br><br>
-
-            <span class="text-xl font-bold">Impact of COVID-19:</span><br><br>
-
-            When COVID-19 struck in February 2020, everyone was trapped at home for two years. Due to the lockdown, I was unable to continue training. At the same time, my 7th grade school year was entirely online. This became a turning point for me, as I started to explore programming.<br><br>
-
-            <span class="text-xl font-bold"> Introduction to Programming:</span><br><br>
-
-            During the second half of grade 7, my schoolmates introduced me to a popular social media platform called Discord. Initially, I was confused by the interface and had no idea how the bots worked. However, my curiosity pushed me to understand how they operated. I searched online and found various codes to create Discord bots. After a few months of copying and modifying other people's codes, I tried writing my own code.<br>
-
-            That's when I discovered aoi.js (formerly dbd.js). I got good at it pretty quickly and soon started taking active part in their discord server. I would help other beginners with their aoi.js-related doubts. However,  I wanted to contribute something more significant, I wanted to give back to the amazing open-source community that taught me programming.<br><br>
-            I began coding dashboards for Discord bots, and my work was noticed by the aoi.js team. They offered me to contribute to their project, I became the lead developer of @aoijs/aoi.panel, an easy-to-use UI for aoi.js. This was a huge milestone in my programming journey.<br><br>
-
-            When my parents heard that I was doing programming, they were upset at first. But I was able to convince them that I was doing it for a positive and meaningful cause.<br><br>
-
-            <span class="text-xl font-bold">Returning to Shooting:</span><br><br>
-            The lockdown was eventually called off, and life returned to normal. Unfortunately, I was not permitted to resume shooting in 9th and 10th grade, as these grades were precious years in academics.<br>
-            I continued shooting in 11th grade, and after only four months, I was playing my first nationals. I trained daily for four hours, and the hard work paid off. I won my first national medal in shooting.
-            <br><br>
-            <span class="text-xl font-bold">The Future:</span><br><br>
-
-            Currently, I’ve shifted categories in rifle shooting, meaning I’m almost starting over, but the grind continues. Both programming and shooting have shaped who I am today, and I remain determined to keep pushing forward in both fields.
-
-
-
-
-
-
-
-            <br><br>
-            
-
-
+    <div class="terminal-container">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <div class="terminal-button btn-close"></div>
+            <div class="terminal-button btn-minimize"></div>
+            <div class="terminal-button btn-maximize"></div>
+          </div>
+          <div class="terminal-title">hridhuun@portfolio:~/about</div>
+          <div class="nav-buttons">
+            <a href="/" class="nav-btn"><i class="fa fa-home"></i> home</a>
+            <a href="/achievements" class="nav-btn">achievements</a>
+            <a href="/library" class="nav-btn">gallery</a>
           </div>
         </div>
-      </div>
+        
+        <div class="terminal-content">
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">cat ~/story/journey.md</span>
+          </div>
+          
+          <div class="content-section">
+            <div class="section-title">The Beginning - Grade 6</div>
+            <p>My journey into programming and shooting began in grade 6, but not in the way you might expect. Ironically, I <span class="highlight">hated attending computer lectures</span> during this time. I was afraid of computers, and when we learned HTML, I didn't understand it at all. All of my classmates were much faster than me when it came to typing. At the time, I was more of a car guy. I would draw cars, play racing games, and focus on anything related to automobiles.</p>
+          </div>
 
-      <!-- Pin to top right corner -->
-      <div class="absolute top-0 right-0 h-12 w-18 p-4">
-        <button class="js-change-theme focus:outline-none">🌙</button>
-        <a href="/"
-          ><button class="focus:outline-none"><i class="fa fa-home"></i></button
-        ></a>
+          <div class="content-section">
+            <div class="section-title">Discovering Shooting</div>
+            <p>Around this time, my mother sent me to an <span class="highlight">army camp</span>, where they taught me archery and target shooting, among other things. I quickly developed an interest in shooting and expressed my desire to do it regularly. When I learned that rifle shooting was an actual sport, I became even more excited. I began practicing at <span class="highlight">Mulund Gymkhana</span>.</p>
+            <br>
+            <p>Within 2–3 months, a DSO shooting competition came up, for which my coach encouraged me to go. Not from a winning perspective, but more from a learning perspective. It was my first shooting competition, and of course, I performed poorly. My score was around <span class="highlight">32 out of 400</span>. While disappointed, I continued practicing.</p>
+          </div>
+
+          <div class="content-section">
+            <div class="section-title">Impact of COVID-19</div>
+            <p>When <span class="highlight">COVID-19 struck in February 2020</span>, everyone was trapped at home for two years. Due to the lockdown, I was unable to continue training. At the same time, my 7th grade school year was entirely online. This became a turning point for me, as I started to explore programming.</p>
+          </div>
+
+          <div class="content-section">
+            <div class="section-title">Introduction to Programming</div>
+            <p>During the second half of grade 7, my schoolmates introduced me to a popular social media platform called <span class="highlight">Discord</span>. Initially, I was confused by the interface and had no idea how the bots worked. However, my curiosity pushed me to understand how they operated. I searched online and found various codes to create Discord bots. After a few months of copying and modifying other people's codes, I tried writing my own code.</p>
+            <br>
+            <p>That's when I discovered <span class="highlight">aoi.js</span> (formerly dbd.js). I got good at it pretty quickly and soon started taking active part in their discord server. I would help other beginners with their aoi.js-related doubts. However, I wanted to contribute something more significant, I wanted to give back to the amazing open-source community that taught me programming.</p>
+            <br>
+            <p>I began coding dashboards for Discord bots, and my work was noticed by the aoi.js team. They offered me to contribute to their project, I became the <span class="highlight">lead developer of @aoijs/aoi.panel</span>, an easy-to-use UI for aoi.js. This was a huge milestone in my programming journey.</p>
+            <br>
+            <p>When my parents heard that I was doing programming, they were upset at first. But I was able to convince them that I was doing it for a positive and meaningful cause.</p>
+          </div>
+
+          <div class="content-section">
+            <div class="section-title">Returning to Shooting</div>
+            <p>The lockdown was eventually called off, and life returned to normal. Unfortunately, I was not permitted to resume shooting in 9th and 10th grade, as these grades were precious years in academics.</p>
+            <br>
+            <p>I continued shooting in 11th grade, and after only four months, I was playing my first nationals. I trained daily for four hours, and the hard work paid off. I won my <span class="highlight">first national medal</span> in shooting.</p>
+          </div>
+
+          <div class="content-section">
+            <div class="section-title">The Future</div>
+            <p>Currently, I've shifted categories in rifle shooting, meaning I'm almost starting over, but the grind continues. Both programming and shooting have shaped who I am today, and I remain determined to keep pushing forward in both fields.</p>
+          </div>
+
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">exit</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <script>
-      document.body.style.backgroundImage =
-        "url('/images/bg" + (Math.floor(Math.random() * 3) + 1) + ".jpg')";
-
-      //Toggle mode
-      const toggle = document.querySelector(".js-change-theme");
-      const body = document.querySelector("body");
-      const profile = document.getElementById("profile");
-
-      toggle.addEventListener("click", () => {
-        if (body.classList.contains("text-gray-900")) {
-          toggle.innerHTML = "☀️";
-          body.classList.remove("text-gray-900");
-          body.classList.add("text-gray-100");
-          profile.classList.remove("bg-white");
-          profile.classList.add("bg-gray-900");
-        } else {
-          toggle.innerHTML = "🌙";
-          body.classList.remove("text-gray-100");
-          body.classList.add("text-gray-900");
-          profile.classList.remove("bg-gray-900");
-          profile.classList.add("bg-white");
-        }
-      });
+      // Add any other JavaScript here if needed
     </script>
   </body>
 </html>

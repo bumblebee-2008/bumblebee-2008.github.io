@@ -309,6 +309,21 @@
         border-radius: 4px;
       }
       
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--terminal-secondary);
+        border: 1px solid var(--terminal-border);
+        color: var(--terminal-text);
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        z-index: 1000;
+      }
+      
       @media (max-width: 768px) {
         .terminal-container {
           padding: 10px;
@@ -335,6 +350,7 @@
   </head>
 
   <body id="bd">
+    <button class="theme-toggle" id="themeToggle">🔆</button>
 
     <div class="terminal-container">
       <div class="terminal-window">
@@ -353,6 +369,58 @@
         </div>
         
         <div class="terminal-content">
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">ls -la ~/stem/</span>
+          </div>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <div class="achievement-title">Academic Excellence</div>
+              <div class="achievement-description">
+                95.6% in ICSE Board Exams and multiple academic achievements
+              </div>
+              <div class="achievement-link">./view_academic_records.sh</div>
+            </div>
+            
+            <div class="achievement-card">
+              <div class="achievement-title">Innovation & Research</div>
+              <div class="achievement-description">
+                Multiple wins in science fairs and innovation competitions
+              </div>
+              <div class="achievement-link">./view_research_projects.sh</div>
+            </div>
+          </div>
+          
+          <div class="prompt">
+            <span class="prompt-user">hridhuun@portfolio</span>
+            <span class="prompt-symbol">$</span>
+            <span class="command">cat ~/stem/achievement_stats.json</span>
+          </div>
+          
+          <div class="stats-section">
+            <div class="stats-title">STEM Achievement Statistics</div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Major Awards</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">₹70k+</div>
+                <div class="stat-label">Prize Money</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">95.6%</div>
+                <div class="stat-label">ICSE Score</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Years Consecutive</div>
+              </div>
+            </div>
+          </div>
+          
           <div class="prompt">
             <span class="prompt-user">hridhuun@portfolio</span>
             <span class="prompt-symbol">$</span>
@@ -424,6 +492,7 @@
               </div>
             </div>
           </div>
+          </div>
           
           <div class="prompt">
             <span class="prompt-user">hridhuun@portfolio</span>
@@ -435,7 +504,31 @@
     </div>
 
     <script>
-      // Matrix rain effect or other effects can go here if needed
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      let isDark = true;
+
+      themeToggle.addEventListener('click', () => {
+        if (isDark) {
+          // Light theme
+          root.style.setProperty('--terminal-bg', '#f8f8f2');
+          root.style.setProperty('--terminal-secondary', '#ffffff');
+          root.style.setProperty('--terminal-border', '#e0e0e0');
+          root.style.setProperty('--terminal-text', '#44475a');
+          root.style.setProperty('--terminal-text-bright', '#282a36');
+          themeToggle.textContent = '🌙';
+        } else {
+          // Dark theme (default)
+          root.style.setProperty('--terminal-bg', '#0a0a0a');
+          root.style.setProperty('--terminal-secondary', '#111111');
+          root.style.setProperty('--terminal-border', '#333333');
+          root.style.setProperty('--terminal-text', '#c0c0c0');
+          root.style.setProperty('--terminal-text-bright', '#ffffff');
+          themeToggle.textContent = '🔆';
+        }
+        isDark = !isDark;
+      });
     </script>
   </body>
 </html>
