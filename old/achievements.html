@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hridhuun's Personal Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <style>
+      
+    </style>
+
+    <script
+      src="https://kit.fontawesome.com/dc1278f4ea.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      .nerdy-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #16a085;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .nerdy-button:hover {
+        background: #138d75;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat "
+    style="height: 100%;background-attachment:fixed;"
+    id="bd"
+  >
+    <div
+      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0 opacity-80"
+    >
+      <!--Main Col-->
+      <div
+        id="profile"
+        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-6 lg:mx-0 my-8 "
+      >
+        <div class="p-4 md:p-12 text-center lg:text-left">
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Achievements</h1>
+          <div
+            class="mx-auto lg:mx-0 w-full pt-2 border-b-2 border-green-500 opacity-25"
+          ></div>
+          <div class="flex justify-center lg:m-12 flex-wrap">
+            <div onclick="window.location.href='/old/shooting'"
+              class="rounded-lg shadow-lg w-full md:w-1/2 p-6 h-70 text-white font-bold text-center opacity-100 hover:opacity-70 bg-center bg-cover m-4 text-base border border-8 border-black "
+              style="
+                background-image: url(&quot;https://www.spss.edu.in/images/Rifle_Shooting/IMG_9923.jpg&quot;);
+              "
+            >
+              Rifle Shooting
+            </div>
+            <div onclick="window.location.href='/old/stem'"
+              class="rounded-lg shadow-lg w-full md:w-1/2 p-6 h-70 text-white font-bold text-center opacity-100 hover:opacity-70 bg-cover bg-center m-4 text-base border border-8 border-black"
+              style="
+                background-image: url(&quot;https://images.ctfassets.net/3u44qrj81gob/1hRgX5341BAa0kGKJZJaAJ/bb42331a9beac6fb06f441bb50b53c47/STEM_Competitions_for_Middle_School_Students.jpg&quot;);
+              "
+            >
+              Academics & STEM
+            </div>
+            
+          </div>
+          <div class="lg:grid h-auto lg:grid-cols-2 lg:gap-4">
+            <div class="w-full lg:w-auto mt-2 my-4 rounded-lg shadow-lg h-52 bg-no-repeat" style="background-image:url('https://github-readme-stats.vercel.app/api/top-langs/?username=Bumblebee-3&langs_count=9&layout=compact&line_height=0.5&card_width=400')"></div>
+            <div class="w-full lg:w-auto mt-2  place-content-center my-4 rounded-lg shadow-lg h-52 bg-no-repeat" style="background-image:url('https://github-readme-stats.vercel.app/api?username=Bumblebee-3&rank_icon=github&include_all_commits=true&hide=contribs,issuescard_width=350&show=prs_merged,prs_merged_percentage')"></div>
+          </div>
+        </div>
+        <div>
+          <div class="w-full lg:w-auto mt-2 place-content-center my-4 rounded-lg shadow-lg h-40 mx-8 bg-no-repeat hidden lg:block" style="background-image:url('https://github-profile-trophy.vercel.app/?username=Bumblebee-3&margin-w=10&no-frame=true&no-bg=true&rank=-C&title=-Reviews')"></div>
+          <div class="w-full lg:w-full mt-2 place-content-center my-4 rounded-lg shadow-lg h-96 mx-8 bg-no-repeat block lg:hidden" style="background-image:url('https://github-profile-trophy.vercel.app/?username=Bumblebee-3&margin-w=10&margin-h=10&no-frame=true&no-bg=true&rank=-C&title=-Reviews&column=2')"></div>
+        </div>
+      </div>
+
+      <!-- Pin to top right corner -->
+      <div class="absolute top-0 right-0 h-12 w-18 p-4">
+        <a href="/achievements" class="nerdy-button">Nerdy Mode</a>
+        <a href="/old"
+          ><button class="focus:outline-none"><i class="fa fa-home"></i></button
+        ></a>
+      </div>
+    </div>
+
+    <script>
+      document.body.style.backgroundImage = "url('/images/bg" + (Math.floor(Math.random() * 3) + 1) + ".jpg')";
+    </script>
+  </body>
+</html>

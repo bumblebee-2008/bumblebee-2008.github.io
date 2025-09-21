@@ -305,10 +305,36 @@
           right: 20px;
         }
       }
+      
+      .non-nerdy-button {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        background: var(--terminal-green);
+        color: var(--terminal-bg);
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 500;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      .non-nerdy-button:hover {
+        background: var(--terminal-amber);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 255, 65, 0.3);
+      }
     </style>
   </head>
 
   <body id="bd">
+    <a href="/old/library" class="non-nerdy-button">Non Nerdy Mode</a>
 
     <div class="terminal-container">
       <div class="terminal-window">

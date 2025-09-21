@@ -272,6 +272,32 @@
       width: 0%;
       animation: loading 3s ease-in-out infinite;
     }
+
+    /* Non-Nerdy Mode Button */
+    .non-nerdy-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--terminal-secondary);
+      border: 1px solid var(--terminal-border);
+      color: var(--terminal-text);
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .non-nerdy-button:hover {
+      background: var(--terminal-green);
+      color: var(--terminal-bg);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    }
     
     @keyframes loading {
       0% { width: 0%; }
@@ -282,7 +308,9 @@
 </head>
 
 <body id="bd">
-
+  <a href="/old/index" class="non-nerdy-button">
+    🎨 Non-Nerdy Mode
+  </a>
 
   <canvas class="matrix-bg" id="matrix"></canvas>
   

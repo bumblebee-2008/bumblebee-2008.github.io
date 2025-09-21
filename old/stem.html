@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hridhuun's Personal Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <script
+      src="https://kit.fontawesome.com/dc1278f4ea.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      .nerdy-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #16a085;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .nerdy-button:hover {
+        background: #138d75;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover bg-no-repeat h-screen p-6"
+    style="background-attachment:fixed;"
+    id="bd"
+  >
+    <div
+      class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0 opacity-75"
+    >
+      <!--Main Col-->
+      <div
+        id="profile"
+        class="w-full lg:w-full rounded-lg lg:rounded-l-lg lg:rounded-r-lg shadow-2xl bg-white lg:opacity-100 mx-6 lg:mx-0 my-6 "
+      >
+        <div class="p-4 md:p-12 text-center lg:text-left">
+          <h1 class="text-3xl font-bold pt-8 lg:pt-0">Academic & STEM Related Achievements</h1>
+          <div
+            class="mx-auto lg:mx-0 w-full pt-2 border-b-2 border-green-500 opacity-25"
+          ></div>
+          <div class="flex justify-center lg:m-12 flex-wrap">
+
+            <ul class="list-disc">
+              <li class="m-2"><i class="font-bold">STEM Quiz hosted by Jasudben ML</i> – 2nd place (2024)</li>
+              <li class="m-2"><i class="font-bold">10th Board Exams</i> – Secured 95.6% (ICSE 2024)</li>
+              <li class="m-2"><i class="font-bold">Vivo Ignite</i> – Recognized as one of the Top 200 Changemakers (2024)</li>
+              <li class="m-2"><i class="font-bold">Science Fair (INQUEST)</i> – 3rd prize for IOT-based Smart Air Purifier (2023)</li>
+              <li class="m-2"><i class="font-bold">School Magazine 'Tartan'</i> – Featured in ‘Pride of Scottish’ for two consecutive years (2021-22, 2022-23)</li>
+              <li class="m-2">Computer Applications, Grade 9,10 – 2nd prize (2023,2024)</li>
+              <li class="m-2"><i class="font-bold">Inspire Awards</i> – Cash prize of Rs. 10,000/- (2023)</li>
+              <li class="m-2"><i class="font-bold">Creative Ideas & Innovation in Action (CIIA - Season 2)</i> – 1st place, Individual & Institution trophy, Rs 25,000 cash prize for PureAer (automated air filter) (2023)</li>
+              <li class="m-2"><i class="font-bold">Junior Make-a-thon</i> - Shaastra 2023 (IIT Madras) – 1st prize, cash prize of 15k for PureAer (1st among 600 schools all over India) (2023)</li>
+              <li class="m-2"><i class="font-bold">INQUEST (The Cathedral & John Connon School) </i>– 1st prize for sea level changes model, Rs 1000 Crossword voucher (2022)</li>
+              <li class="m-2"><i class="font-bold">RotaScience </i>– 2nd prize, Certificate of Merit, Individual & school trophy, for sea level rise monitoring model (2022)</li>
+              
+              <li class="m-2"><i class="font-bold">Shark Tank 2.0 (BrainStorm 2023)</i> – 2nd prize (2022)</li>
+              <li class="m-2"><i class="font-bold">CIIA-1</i> – Runner-up (2nd position), Individual & Institution trophy, Rs 20,000 cash prize for Artificial Eyes prototype (aid for the visually impaired) (2022)</li>
+              <li class="m-2"><i class="font-bold">Inventio (Perseverantia)</i> – 2nd prize in Inventio category for climate issue model (CO2 warning & carbon capture) (2022)</li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pin to top right corner -->
+      <div class="absolute top-0 right-0 h-12 w-18 p-4">
+        <a href="/stem" class="nerdy-button">Nerdy Mode</a>
+        <a href="/old"
+          ><button class="focus:outline-none"><i class="fa fa-home"></i></button
+        ></a>
+      </div>
+    </div>
+
+    <script>
+      document.body.style.backgroundImage =
+        "url('/images/bg" + (Math.floor(Math.random() * 3) + 1) + ".jpg')";
+    </script>
+  </body>
+</html>
