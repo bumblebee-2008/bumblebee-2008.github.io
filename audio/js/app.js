@@ -571,7 +571,7 @@ class SoundVisualizerApp {
                 await this.audioProcessor.audioContext.resume();
             }
             
-            const demoUrl = '/demo/alan-walker-the-spectre.mp3';
+            const demoUrl = '/audio/demo/alan-walker-the-spectre.mp3';
             
             try {
                 console.log('Attempting to load demo file from:', demoUrl);
